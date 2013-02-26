@@ -30,6 +30,8 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bourne (1.1.2)
+      mocha (= 0.10.5)
     builder (3.0.4)
     capistrano (2.14.2)
       highline
@@ -75,7 +77,10 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.21)
+    mocha (0.10.5)
+      metaclass (~> 0.0.1)
     multi_json (1.6.1)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
@@ -134,6 +139,9 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    shoulda-matchers (1.4.2)
+      activesupport (>= 3.0.0)
+      bourne (~> 1.1.2)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -166,4 +174,5 @@ DEPENDENCIES
   rspec-rails
   ruby-oci8
   sass-rails (~> 3.2.3)
+  shoulda-matchers
   uglifier (>= 1.0.3)
