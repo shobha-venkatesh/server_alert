@@ -5,7 +5,7 @@ class ApplicationAlert < ActiveRecord::Base
   class << self
     def build(user_application,options = {})
       # attributes = {:user_application => user_application}
-      obj_params = {:account_name => options.account_name,:application_name => options.application_name, :alert_url => options.alert_url, :long_description => options.long_description, :message => options.message,:severity => options.severity, :short_description => options.short_description}
+      obj_params = {:account_name => options[:account_name],:application_name => options[:application_name], :alert_url => options[:alert_url], :long_description => options[:long_description], :message => options[:message],:severity => options[:severity], :short_description => options[:short_description]}
       ApplicationAlert.new(obj_params).tap do |appln|
         # appln.account_name = appln.account_name
         # appln.alert_url = appln.alert_url
