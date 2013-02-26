@@ -9,7 +9,7 @@ gem 'rails', '3.2.12'
 
 gem 'ruby-oci8'
 gem 'activerecord-oracle_enhanced-adapter'
-
+gem 'activeadmin'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
