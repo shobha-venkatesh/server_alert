@@ -7,7 +7,7 @@ class ApplicationAlertsController < ApplicationController
 
   def create
     user_application = UserApplication.find_by_name(params[:application_name])
-    @alert = build_application_alert(user_application,params)
+    @alert = build_application_alert(user_application,params[:alert])
     # @alert = ApplicationAlert.new(params[:application_alert])
     @error = {:error => 'creating alert error'}
     if @alert.save
