@@ -1,5 +1,5 @@
 class UserApplicationsController < ApplicationController
-	def show
-		@user_application = ApplicationAlert.find(params[:id])
+	def index
+		@user_applications = UserApplication.find(:all)
 	end
 end

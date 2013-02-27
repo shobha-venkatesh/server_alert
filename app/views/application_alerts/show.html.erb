@@ -1,0 +1,24 @@
+<table class="table table-striped">
+	<tr>
+	 <th>Application Name</th>
+	 <th>Account Name</th>
+	 <th>Severity</th>
+	 <th>Message</th>
+	 <th>Alert Url</th>
+	 <th>Short Description</th>
+	 <th>Long Description</th>
+	 <th>Alert Time</th>
+	<tr>
+		<% @application_alert.each do |alert| %>
+		 <tr>
+		 	<td><%= alert.try(:application_name) %></td>
+		 	<td><%= alert.try(:account_name) %></td>
+		 	<td><%= alert.try(:severity) %></td>
+		 	<td><%= alert.try(:message) %></td>
+		 	<td><%= alert.try(:alert_url) %></td>
+		 	<td><%= alert.try(:short_description) %></td>
+		 	<td><%= alert.try(:long_description) %></td>
+		 	<td><%= alert.try(:alert_time).localtime %></td>
+		 </tr>
+		<% end %>
+</table>

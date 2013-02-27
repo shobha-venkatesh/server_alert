@@ -1,0 +1,14 @@
+<div class="appln_details" style="width:70%">
+ <table class="table table-striped">
+      <tr>
+         <th>Application</th>
+         <th>Status</p>
+       </tr>
+       <% @user_applications.each do |appln| %>
+          <tr>
+   	         <td><%= link_to appln.name , application_alert_path(:id => appln.id) %></td>
+   	         <td><%= appln.current_status %></td>
+          </tr>
+      <% end %>
+  </table>
+</div>
