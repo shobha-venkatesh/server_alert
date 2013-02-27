@@ -11,8 +11,9 @@ class ApplicationAlertsController < ApplicationController
 
 
   def create
-    user_application = UserApplication.find_by_name(params[:alert]["application_name"])
-    @alert = build_application_alert(user_application,params[:alert]) if params.has_key?("alert")
+    alerts = JSON.parse(params[:alert])
+    user_application = UserApplication.find_by_name(alerts["application_name"])
+    @alert = build_application_alert(user_application,alerts) if params.has_key?("alert")
     # @deploy_alert = build_deployment_alert(params[:deployment]) if params.has_key?("deployment")
     # @alert = ApplicationAlert.new(params[:application_alert])
     @error = {:error => 'Error while creating record'}
