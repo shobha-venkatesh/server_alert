@@ -10,6 +10,7 @@ gem 'rails', '3.2.12'
 gem 'ruby-oci8'
 gem 'activerecord-oracle_enhanced-adapter'
 gem 'activeadmin'
+gem 'twitter-bootstrap-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -18,8 +19,6 @@ group :assets do
   gem 'less-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer'
-  gem 'twitter-bootstrap-rails'
-
   gem 'uglifier', '>= 1.0.3'
 end
 
