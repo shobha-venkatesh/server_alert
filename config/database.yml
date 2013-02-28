@@ -4,8 +4,8 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: oracle_enhanced
-  database: XE
+  adapter: postgresql
+  database: radiant_dev
   username: server_alert
   password: server_alert
 
@@ -13,13 +13,13 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: oracle_enhanced
-  database: XE
+  adapter: postgresql
+  database: radiant_test
   username: serveralert_test
   password: serveralert_test
 
 production:
-  adapter: oracle_enhanced
-  database: staging
+  adapter: postgresql
+  database: radiant_live
   username: server_alert
   password: server_alert
