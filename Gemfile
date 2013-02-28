@@ -7,8 +7,7 @@ gem 'rails', '3.2.12'
 
 # gem 'sqlite3'
 
-# gem 'ruby-oci8'
-# gem 'activerecord-oracle_enhanced-adapter'
+
 gem 'activeadmin'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
@@ -28,6 +27,8 @@ group :test, :development do
  gem 'factory_girl_rails'
  gem 'capistrano'
  gem 'shoulda-matchers'
+ gem 'ruby-oci8'
+ gem 'activerecord-oracle_enhanced-adapter'
 end
 
 group :test do
