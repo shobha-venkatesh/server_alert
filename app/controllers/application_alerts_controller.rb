@@ -11,7 +11,7 @@ class ApplicationAlertsController < ApplicationController
 
 
   def create
-    alerts = JSON.parse(params[:alert])
+    alerts = JSON.parse(params[:alert] || params[:deployment]) 
     user_application = UserApplication.find_by_name(alerts["application_name"])
     @alert = build_application_alert(user_application,alerts) if params.has_key?("alert")
     # @deploy_alert = build_deployment_alert(params[:deployment]) if params.has_key?("deployment")
