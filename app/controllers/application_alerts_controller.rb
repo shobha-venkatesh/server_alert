@@ -37,7 +37,7 @@ class ApplicationAlertsController < ApplicationController
   end
 
   def show
-    @application_alert = ApplicationAlert.find(:all, :conditions => ["user_application_id=?",params[:id]], :order => 'alert_time DESC')
+    @application_alert = ApplicationAlert.find(:all, :conditions => ["user_application_id=?",params[:id]], :order => 'created_at DESC')
   end
 
 end
