@@ -1,14 +1,14 @@
-<div class="appln_details" style="width:70%">
- <table class="table table-striped table-hover">
-      <tr>
-         <th>Application</th>
-         <th>Status</p>
-       </tr>
-       <% @user_applications.each do |appln| %>
+<div class="appln_details">      
+  <% @user_applications.each do |appln| %>
+    <%= link_to application_alert_path(:id => appln.id) do %>
+      <div class="server <%= appln.current_status %>">
+        <table style="width: 100%">
           <tr>
-   	         <td><%= link_to appln.name , application_alert_path(:id => appln.id) %></td>
-   	         <td><%= appln.current_status %></td>
+             <td><span class="appname"><%= appln.name %></span></td>
+             <td align="right"><span class="appstatus">Application is currently <%= appln.current_status %></span></td>
           </tr>
-      <% end %>
-  </table>
+        </table>
+      </div>
+    <% end %>
+  <% end %>
 </div>

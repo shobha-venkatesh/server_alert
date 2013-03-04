@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<div class="container">
+  <div class="navbar">
+   <div class="navbar-inner">  
+    <div class="container">
+    	<a class="brand" href="#"><%=image_tag "jb.jpg" %></a>
+    </div>
+   </div>
+  </div>
+ <%= yield %>
+</div>
 
 </body>
 </html>

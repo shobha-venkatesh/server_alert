@@ -1,3 +1,29 @@
 // Place all the styles related to the UserApplications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.server{
+	margin: 5px 0px;
+	color: #FFFFFF;
+	a {
+		color: #FFFFFF;
+	}
+	padding: 20px;
+	border-radius: 2px;
+	font-size: 20px;
+}
+.up{
+	background-color: #7daa37;
+}
+
+.down{
+	background-color: #9d261d;
+}
+
+.appname{
+	text-transform: uppercase;
+}
+
+.appstatus{
+	font-size: 12px;
+}
