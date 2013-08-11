@@ -11,53 +11,60 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130226123515) do
+ActiveRecord::Schema.define(:version => 20130808165802) do
 
   create_table "active_admin_comments", :force => true do |t|
-    t.string   "resource_id",                                  :null => false
-    t.string   "resource_type",                                :null => false
-    t.integer  "author_id",     :precision => 38, :scale => 0
+    t.string   "resource_id",   :null => false
+    t.string   "resource_type", :null => false
+    t.integer  "author_id"
     t.string   "author_type"
     t.text     "body"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "namespace"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], :name => "i_act_adm_com_aut_typ_aut_id"
-  add_index "active_admin_comments", ["namespace"], :name => "i_act_adm_com_nam"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "i_adm_not_res_typ_res_id"
+  add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
+  add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "admin_users", :force => true do |t|
-    t.string   "email",                                                 :default => "", :null => false
-    t.string   "encrypted_password",                                    :default => "", :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :precision => 38, :scale => 0, :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                                            :null => false
-    t.datetime "updated_at",                                                            :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
-  add_index "admin_users", ["reset_password_token"], :name => "i_adm_use_res_pas_tok", :unique => true
+  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "api_tokens", :force => true do |t|
+    t.string   "token"
+    t.decimal  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "application_alerts", :force => true do |t|
-    t.integer   "user_application_id",              :precision => 38, :scale => 0
-    t.text      "short_description"
-    t.text      "long_description"
-    t.string    "application_name"
-    t.string    "account_name"
-    t.string    "severity"
-    t.string    "message"
-    t.string    "alert_url"
-    t.datetime  "created_at",                                                      :null => false
-    t.datetime  "updated_at",                                                      :null => false
-    t.timestamp "alert_time",          :limit => 6
+    t.integer  "user_application_id"
+    t.text     "short_description"
+    t.text     "long_description"
+    t.string   "application_name"
+    t.string   "account_name"
+    t.string   "severity"
+    t.string   "message"
+    t.string   "alert_url"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.datetime "alert_time"
   end
 
   create_table "deployment_alerts", :force => true do |t|

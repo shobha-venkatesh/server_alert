@@ -11,7 +11,7 @@ gem 'rails', '3.2.12'
 gem 'activeadmin'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
-gem 'pg'
+# gem 'pg'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -27,8 +27,9 @@ group :test, :development do
  gem 'factory_girl_rails'
  gem 'capistrano'
  gem 'shoulda-matchers'
- gem 'ruby-oci8'
- gem 'activerecord-oracle_enhanced-adapter'
+ gem 'sqlite3'
+ # gem 'ruby-oci8'
+ # gem 'activerecord-oracle_enhanced-adapter'
 end
 
 group :test do
