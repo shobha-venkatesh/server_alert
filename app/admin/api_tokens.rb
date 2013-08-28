@@ -1,4 +1,8 @@
 ActiveAdmin.register ApiToken do
+  form do |f|
+  	 f.actions
+  end
+
   member_action :create, :method => :post do
   	user = current_admin_user.id
     build_token = build(user)
