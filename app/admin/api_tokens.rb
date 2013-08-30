@@ -1,5 +1,5 @@
 ActiveAdmin.register ApiToken do
-  actions :index, :show, :destroy
+  actions :index, :show, :destroy, :new
 
   form do |f|
   	 f.actions
