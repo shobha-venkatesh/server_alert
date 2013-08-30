@@ -80,6 +80,12 @@ ActiveAdmin.setup do |config|
   # Default:
   config.logout_link_path = :destroy_admin_user_session_path
 
+  ActiveAdmin.setup do |config|
+
+    config.allow_comments = false
+
+  end
+
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
   #
