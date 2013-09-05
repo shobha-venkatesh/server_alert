@@ -1,13 +1,19 @@
 ActiveAdmin.register ApiToken do
   actions :index, :show, :destroy, :new
-
+ 
   form do |f|
   	 f.actions
   end
 
   member_action :create, :method => :post do
-  	user = current_admin_user.id
-    build_token = build(user)
+  	@user = current_admin_user.id
+  	@api_token = ApiToken.find_by_user_id(@user)
+    if @api_token.blank?
+       build_token = build(@user)
+    else
+        @api_token.token = SecureRandom.hex(6)
+        @api_token.save
+    end
     redirect_to :action => :index, :notice => "Created!"
   	end
 
@@ -22,3 +28,4 @@ ActiveAdmin.register ApiToken do
         end
   	end
 end
+ 
