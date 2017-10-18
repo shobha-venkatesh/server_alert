@@ -1,4 +1,4 @@
 server_alert
 ============
 
-server_alert
+server alert
